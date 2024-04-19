@@ -7,11 +7,11 @@ function HomePage() {
         <div>
             {/* Header Section */}
             <header>
-                <h1>Your Personalized Nutrition Coach</h1>
+                <h1>HealthyBite</h1>
                 <nav>
                     <ul className="nav-links">
                         <li><Link to="/login">Login</Link></li>
-                        <li><Link to="/register">Register</Link></li>
+                        <li><Link to="/register">Sign Up</Link></li>
                     </ul>
                 </nav>
             </header>

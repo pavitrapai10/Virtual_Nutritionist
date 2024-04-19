@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './FormPages.css'; // Import the CSS file
+import backgroundImage from 'src\assets\diet_bg.jpg';
+
 
 function RegisterPage() {
     const [firstName, setFirstName] = useState('');
@@ -21,7 +23,7 @@ function RegisterPage() {
 
     return (
         <div className="form-container"> {/* Apply form-container class */}
-            <h2 className="form-title">Register</h2> {/* Apply form-title class */}
+            <h2 className="form-title">Sign Up</h2> {/* Apply form-title class */}
             <form onSubmit={handleSubmit}>
                 <div className="form-group"> {/* Apply form-group class to group the label and input */}
                     <label htmlFor="firstName">First Name:</label>

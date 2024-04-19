@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './FormPages.css'; // Import the CSS file
-import backgroundImage from 'src\assets\diet_bg.jpg';
+
 
 
 function RegisterPage() {

@@ -1,6 +1,24 @@
 import EmailButton from "../components/EmailButton";
+import React, { useState } from 'react';
+import { forgetPassword } from '../../backend/api';
+
+
 
 const ForgetPassword = () => {
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState(null);
+  const [error, setError] = useState(null);
+
+  const handleForgetPassword = async (e) => {
+    e.preventDefault();
+    try {
+      await forgetPassword(email);
+      setMessage('Password reset link sent. Check your email.');
+    } catch (error) {
+      setError('Failed to send password reset link. Please try again.');
+    }
+  };
+
   return (
     <div className="w-full relative bg-black-white overflow-hidden flex flex-col items-end justify-start pt-[29px] pb-[420px] pr-[851px] pl-[34px] box-border gap-[124px] leading-[normal] tracking-[normal] text-left text-9xl text-black font-paragraph-p2-reg mq450:gap-[31px] mq450:pr-5 mq450:box-border mq725:gap-[62px] mq725:pr-[425px] mq725:box-border">
       <main className="w-full h-full absolute !m-[0] top-[0px] right-[0px] bottom-[0px] left-[0px]">

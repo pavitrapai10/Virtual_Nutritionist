@@ -27,20 +27,24 @@ function App() {
 
     switch (pathname) {
       case "/":
-        title = "";
-        metaDescription = "";
+        title = "Login - Nutrition App";
+        metaDescription = "Log in to your Nutrition App account.";
         break;
       case "/forget-password":
-        title = "";
-        metaDescription = "";
+        title = "Forget Password - Nutrition App";
+        metaDescription = "Reset your Nutrition App password.";
         break;
       case "/signup":
-        title = "";
-        metaDescription = "";
+        title = "Sign Up - Nutrition App";
+        metaDescription = "Create a new account on Nutrition App.";
         break;
       case "/landing":
-        title = "";
-        metaDescription = "";
+        title = "Welcome - Nutrition App";
+        metaDescription = "Welcome to the Nutrition App.";
+        break;
+      default:
+        title = "Nutrition App";
+        metaDescription = "Your go-to app for nutrition tracking.";
         break;
     }
 
@@ -49,12 +53,13 @@ function App() {
     }
 
     if (metaDescription) {
-      const metaDescriptionTag = document.querySelector(
-        'head > meta[name="description"]'
-      );
-      if (metaDescriptionTag) {
-        metaDescriptionTag.content = metaDescription;
+      let metaDescriptionTag = document.querySelector('head > meta[name="description"]');
+      if (!metaDescriptionTag) {
+        metaDescriptionTag = document.createElement('meta');
+        metaDescriptionTag.name = "description";
+        document.head.appendChild(metaDescriptionTag);
       }
+      metaDescriptionTag.content = metaDescription;
     }
   }, [pathname]);
 
@@ -67,4 +72,5 @@ function App() {
     </Routes>
   );
 }
+
 export default App;

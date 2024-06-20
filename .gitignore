@@ -33,3 +33,22 @@ pids
 # OS-specific
 Thumbs.db
   
+# User-specific files
+.bash_history
+.gitconfig
+.lesshst
+.node_repl_history
+
+# Conda and Anaconda files
+.condarc
+anaconda-navigator.ini
+navigator.pid
+*.json
+*.log
+*.bat
+
+# Snapmaker files
+.snapmaker-luban.json
+
+# Packet Tracer files
+.packettracer

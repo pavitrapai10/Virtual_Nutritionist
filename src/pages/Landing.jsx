@@ -10,6 +10,7 @@ import FrameComponent1 from "../components/FrameComponent1";
 import Box from "../components/Box";
 import FrameComponent from "../components/FrameComponent";
 import Footer from "../components/Footer";
+import React from 'react';
 
 const Landing = () => {
   return (

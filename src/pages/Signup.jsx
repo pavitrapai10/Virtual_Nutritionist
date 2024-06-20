@@ -1,6 +1,27 @@
 import FrameComponent11 from "../components/FrameComponent11";
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { signupUser } from '../../backend/api';
+
 
 const Signup = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState(null);
+  const navigate = useNavigate();
+
+  const handleSignup = async (e) => {
+    e.preventDefault();
+    try {
+      await signupUser(name, email, password);
+      navigate('/login');
+    } catch (error) {
+      setError('Signup failed. Please try again.');
+    }
+  };
+
+
   return (
     <div className="w-full relative bg-black-white overflow-hidden flex flex-col items-end justify-start pt-[29px] pb-[117px] pr-[851px] pl-[34px] box-border gap-[74px] leading-[normal] tracking-[normal] mq450:gap-[18px] mq450:pr-5 mq450:box-border mq725:gap-[37px] mq725:pr-[425px] mq725:box-border">
       <main className="w-full h-full absolute !m-[0] top-[0px] right-[0px] bottom-[0px] left-[0px]">
